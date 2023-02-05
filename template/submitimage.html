@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h4>Submit an image of a music instrument!</h4>
+    <br />
+    <form action="{{ url_for('submitimage') }}" method="POST" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <input type="file" name="imagefile" class="form-control-file">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit Image">
+    </form>
+    {% if prediction %}
+    <div class="prediction-results mt-5">
+        <img src="data:image/jpeg;base64,{{ img_data }}" class="img-fluid d-flex justify-content-center">
+        <p class="text-center mt-3">Prediction: {{ prediction }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
