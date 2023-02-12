@@ -1,0 +1,21 @@
+{% extends "Base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h4>Submit a link of an image of a music instrument!</h4>
+    <br />
+    <form action="{{ url_for('submiturl') }}" method="POST">
+        <div class="form-group mb-3">
+            <input type="text" name="img_url" class="form-control" placeholder="Enter image URL">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit Image">
+    </form>
+    {% if result %}
+    <div class="prediction-results mt-5">
+        <a href="{{ img_url }}" target="_blank"><img src="{{ img_url }}"
+                class="img-fluid d-flex justify-content-center"></a>
+        <p class="text-center mt-3">URL: {{ img_url }}</p>
+        <p class="text-center mt-3">Prediction: {{ result }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
