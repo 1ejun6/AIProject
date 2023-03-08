@@ -1,4 +1,4 @@
-# Project Description
+# AI Project
 This project consists of three parts 
 > A, B and C each focusing on a different aspect of machine learning
 
